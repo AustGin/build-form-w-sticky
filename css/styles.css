@@ -8,29 +8,45 @@ body {
 
 .inner-container,
 section {
-    padding: 1rem;
+    padding:  1rem 1rem 0.5rem 1rem;
 }
 
-
-
-h2 {
+h2,
+h3 {
     color: #dc413e;
     text-transform: uppercase;
     font-size: 3.75rem;
     font-weight: 100;
 }
 
+h3 {
+    font-size: 2.8125rem;
+}
+
 p {
     margin-bottom: 1.5rem;
 }
 
+p:last-of-type {
+    margin-bottom: 0.5rem;
+}
+
 header {
     background-color: #000;
+    position: sticky;
+    position: -webkit-sticky;
+    top: -89px;
+    
 }
 
 svg {
     fill: white;
-    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+nav {
+    background-color: #000;
 }
 
 .nav-links {
@@ -42,7 +58,7 @@ svg {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    padding: 1.5rem 0.5rem;
+    padding: 1rem 0.5rem;
     display: block;
 }
 
@@ -54,6 +70,7 @@ svg {
 fieldset {
     border: none;
     padding: 0;
+    margin-bottom: 3.5rem;
 }
 
 label {
@@ -62,10 +79,74 @@ label {
     display: block;
 }
 
-input {
+input,
+textarea {
     width: 100%;
     border: 1px solid #c0c0c0;
     border-radius: 5px;
     padding: 0.5rem;
     box-shadow: 2px 2px 3px #e8e8e8;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    margin-left: 5px;
+    padding: 0;
+}
+
+label[for="terms"] {
+    display: inline;
+    font-size: 1.35rem;
+}
+
+input[type="submit"] {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    width: auto;
+    border: none;
+    background-color: white;
+    box-shadow: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: padding-left 1s ease;
+}
+
+input[type="submit"]:hover {
+    color: #dc413e;
+    padding-left: 20px;
+}
+
+@media only screen and (min-width: 1260px) {
+    /* move to a 2 column layout, and add a fixed width container */
+    fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    fieldset div {
+        flex: 0 1 49%;
+    }
+
+    h3 {
+        width: 100%;
+    }
+
+    .inner-container,
+    section {
+        padding: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .inner-container {
+        padding:  1rem 1rem 0.5rem 1rem;
+    }
 }
